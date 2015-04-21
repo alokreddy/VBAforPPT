@@ -1,0 +1,17 @@
+Sub ChangeFontSizeLegend()
+    Dim sld As Slide
+    Dim shp As Shape
+    
+    For Each sld In ActivePresentation.Slides
+        For Each shp In sld.Shapes
+        If shp.HasChart = msoTrue Then
+            If shp.Chart.HasLegend = True Then
+                'If shp.TextFrame.HasText = True Then
+                    shp.Chart.Legend.Font.Name = "Arial"
+                    
+                End If
+            End If
+        Next
+    Next
+    
+End Sub
